@@ -43,6 +43,7 @@ class _GameCardState extends State<GameCard> {
         feedback: AnimatedContainer(
           duration: const Duration(milliseconds: 100),
           decoration: BoxDecoration(
+            shape: BoxShape.circle,
             color: draggingColor,
             border: border,
           ),
@@ -63,7 +64,10 @@ class _GameCardState extends State<GameCard> {
         child: Container(
           width: width,
           height: height,
-          color: entity.color,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: entity.color,
+          ),
           child: Center(
             child: Text(entity.name),
           ),
