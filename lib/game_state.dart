@@ -24,6 +24,13 @@ class GameState {
     grabber.y = y;
   }
 
+  /// Check if [entity] collided with other [Entity] or [Grabber]
+  ///
+  /// The first [bool] returns if [entity] collided with any other solid.
+  /// The second [bool] returns true if [entity] collided with it's [Grabber]
+  /// ```dart
+  /// grabber.attachableType == entity.runtimeType //entity grabber
+  /// ```
   (bool, bool) didCollided(
     double x1,
     double y1,
