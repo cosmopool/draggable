@@ -37,7 +37,7 @@ class Dog extends Entity {
   Dog({
     required super.x,
     required super.y,
-  }) : super(name: 'Dog', color: Colors.green);
+  }) : super(name: 'Dog', color: Colors.purple);
 }
 
 class Cat extends Entity {

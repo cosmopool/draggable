@@ -14,6 +14,9 @@ class GameState {
     Cat(x: 5 * _width, y: 100),
   ];
 
+  bool get isAllGrabbersFull =>
+      grabbers.map((g) => g.full).reduce((a, b) => a && b);
+
   Grabber getGrabber(Entity entity) {
     return grabbers.firstWhere((e) => e.attachableType == entity.runtimeType);
   }
