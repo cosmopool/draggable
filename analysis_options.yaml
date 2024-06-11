@@ -1,0 +1,15 @@
+include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    lines_longer_than_80_chars: true
+    prefer_single_quotes: true 
+    sort_constructors_first: true
+    avoid_unused_constructor_parameters: true
+    empty_catches: true
+    file_names: true
+    slash_for_doc_comments: true
+    unawaited_futures: true
+    unnecessary_late: true
+    unnecessary_getters_setters: true
+    require_trailing_commas: true
+    always_use_package_imports: true

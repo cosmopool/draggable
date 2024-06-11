@@ -1,0 +1,80 @@
+# Project
+pubspec.lock
+
+# Miscellaneous
+*.reflectable.*
+*.freezed.*
+*.mapper.*
+*.g.*
+*.mapper.dart
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/.fvm
+/coverage/
+
+*api_key.json
+*.p8
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+/android/logsUnityBuild
+/android/UnityLibrary/
+/android/unityLibrary_BurstDebugInformation_DoNotShip
+/android/unity_library/
+/android/unity_library_BurstDebugInformation_DoNotShip
+
+/ios/logsUnityBuild
+/ios/logs_unity_build/
+/ios/UnityLibrary/
+/ios/unityLibrary_BurstDebugInformation_DoNotShip
+/ios/unity_library/
+/ios/unity_library_BurstDebugInformation_DoNotShip
+
+/scarf/
+
+#files generated when first open unity project
+/ProjectSettings/
+/packages/manifest.json
+/Library/
+/Temp/

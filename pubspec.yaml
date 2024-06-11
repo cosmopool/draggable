@@ -1,0 +1,22 @@
+name: mvc
+description: "A new Flutter project."
+version: 0.0.1+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+  flutter: ^3.22.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flame: ^1.18.0
+  particle_field: ^1.0.0
+  newton_particles: ^0.1.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
