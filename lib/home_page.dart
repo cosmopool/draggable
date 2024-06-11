@@ -18,16 +18,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   GameState get gameState => widget.gameState;
+  List<Entity> get entities => widget.gameState.entities;
 
   final width = 100.0;
   final height = 100.0;
   final color = Colors.blue;
-
-  late final entities = [
-    Fish(x: 2 * width, y: 100),
-    Dog(x: 3.5 * width, y: 100),
-    Cat(x: 5 * width, y: 100),
-  ];
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-sealed class Entity {
+abstract class Vec2 {
+  double get x;
+  double get y;
+}
+
+sealed class Entity extends Vec2 {
   Entity({
     required this.x,
     required this.y,
@@ -8,7 +13,9 @@ sealed class Entity {
     required this.name,
   });
 
+  @override
   double x;
+  @override
   double y;
   final Color color;
   final String name;
@@ -40,15 +47,13 @@ class Cat extends Entity {
   }) : super(name: 'Cat', color: Colors.yellow);
 }
 
-class Grabber {
+class Grabber extends Vec2 {
   Grabber(this.x, this.y, this.attachableType);
 
   final Type attachableType;
-  double x;
-  double y;
-
   @override
-  String toString() {
-    return 'Grabber($x, $y, $attachableType)';
-  }
+  double x;
+  @override
+  double y;
+  bool full = false;
 }

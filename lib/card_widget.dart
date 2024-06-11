@@ -49,26 +49,15 @@ class _GameCardState extends State<GameCard> {
           width: width,
           height: height,
         ),
-        onDragUpdate: ((details) {
-          final x = details.localPosition.dx;
-          final y = details.localPosition.dy;
-
-          final isInside = gameState.isInsideHole(x, y, entity);
-          if (isInside && border != null) return;
-          if (isInside) {
-            setState(() => border = Border.all(color: Colors.red, width: 5));
-          } else {
-            setState(() => border = null);
-          }
-        }),
         onDraggableCanceled: (_, offset) {
           double x = offset.dx, y = offset.dy;
-          if (gameState.isInsideHole(x, y, entity)) {
+          final (collided, withGrabber) = gameState.didCollided(x, y, entity);
+          if (collided && !withGrabber) return;
+          if (withGrabber) {
             final grabber = gameState.getGrabber(entity);
             x = grabber.x;
             y = grabber.y;
           }
-          if (gameState.didCollided(x, y, entity)) return;
           setState(() => entity.move(x, y));
         },
         child: Container(

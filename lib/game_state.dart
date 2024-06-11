@@ -4,8 +4,15 @@ import 'package:mvc/entities.dart';
 
 class GameState {
   GameState();
+  final _width = 100.0;
 
   List<Grabber> grabbers = [];
+
+  late List<Entity> entities = [
+    Fish(x: 2 * _width, y: 100),
+    Dog(x: 3.5 * _width, y: 100),
+    Cat(x: 5 * _width, y: 100),
+  ];
 
   Grabber getGrabber(Entity entity) {
     return grabbers.firstWhere((e) => e.attachableType == entity.runtimeType);
@@ -17,22 +24,25 @@ class GameState {
     grabber.y = y;
   }
 
-  bool isInsideHole(double x, double y, Entity entity, [double? width]) {
-    final grabber = getGrabber(entity);
-    final dx = grabber.x - x;
-    final dy = grabber.y - y;
-    final distance = math.sqrt(dx * dx + dy * dy);
-    return distance <= (width ?? 100);
-  }
+  (bool, bool) didCollided(
+    double x1,
+    double y1,
+    Entity entity, [
+    double? width,
+  ]) {
+    for (var obj in [...grabbers, ...entities]) {
+      if (obj == entity) continue;
 
-  bool didCollided(double x1, double y1, Entity entity, [double? width]) {
-    for (var grabber in grabbers) {
-      if (grabber.attachableType == entity.runtimeType) continue;
-      final dx = grabber.x - x1;
-      final dy = grabber.y - y1;
+      final dx = obj.x - x1;
+      final dy = obj.y - y1;
       final distance = math.sqrt(dx * dx + dy * dy);
-      if (distance <= (width ?? 100)) return true;
+      if (distance <= (width ?? 100)) {
+        if (obj is Grabber && obj.attachableType == entity.runtimeType) {
+          return (true, true);
+        }
+        return (true, false);
+      }
     }
-    return false;
+    return (false, false);
   }
 }
