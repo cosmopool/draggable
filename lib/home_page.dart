@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mvc/card_widget.dart';
-import 'package:mvc/entities.dart';
-import 'package:mvc/game_state.dart';
-import 'package:mvc/hole_widget.dart';
+import 'package:draggable_items/card_widget.dart';
+import 'package:draggable_items/entities.dart';
+import 'package:draggable_items/game_state.dart';
+import 'package:draggable_items/hole_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({

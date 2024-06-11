@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvc/entities.dart';
-import 'package:mvc/game_state.dart';
+import 'package:draggable_items/entities.dart';
+import 'package:draggable_items/game_state.dart';
 
 class GameCard extends StatefulWidget {
   const GameCard({

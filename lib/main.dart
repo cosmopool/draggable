@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvc/game_state.dart';
-import 'package:mvc/home_page.dart';
+import 'package:draggable_items/game_state.dart';
+import 'package:draggable_items/home_page.dart';
 
 void main() {
   runApp(const MyApp());

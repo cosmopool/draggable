@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:mvc/entities.dart';
+import 'package:draggable_items/entities.dart';
 
 class GameState {
   GameState();
