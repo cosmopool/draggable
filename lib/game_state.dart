@@ -34,14 +34,23 @@ class GameState {
     Entity entity, [
     double? width,
   ]) {
-    for (var solid in [...grabbers, ...entities]) {
+    final a = [...grabbers, ...entities];
+    for (var solid in a) {
       if (solid == entity) continue;
 
       final dx = solid.x - x1;
       final dy = solid.y - y1;
       final distance = math.sqrt(dx * dx + dy * dy);
-      if (distance <= (width ?? 100)) {
+      final collided = distance <= (width ?? 100);
+      if (!collided) {
         if (solid is Grabber && solid.attachableType == entity.runtimeType) {
+          solid.full = false;
+        }
+        continue;
+      } else {
+        if (solid is! Grabber) return (true, false);
+        if (solid.attachableType == entity.runtimeType) {
+          solid.full = true;
           return (true, true);
         }
         return (true, false);
