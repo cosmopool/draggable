@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
 
             final type = e.runtimeType;
             gameState.grabbers.add(Grabber(x, y, type));
-            return GameHole(type: type, name: e.name, x: x, y: y);
+            return GameGrabber(type: type, name: e.name, x: x, y: y);
           }),
           ...entities.map((e) {
             return GameCard(

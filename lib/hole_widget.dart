@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GameHole extends StatelessWidget {
-  const GameHole({
+class GameGrabber extends StatelessWidget {
+  const GameGrabber({
     super.key,
     required this.type,
     required this.name,
